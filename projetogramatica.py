@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+
+#pip install lark
+#pip install lark-parser
+#pip install IPython
+#pip install graphviz   
+
+# O pip install graphviz só instala a biblioteca Python, não instala o executável dot.
+# Você precisa instalar o Graphviz completo (binários do Windows).
+# 1. Baixe o Graphviz para Windows
+# 2. Execute o instalador
+# 3. Verifique se dot está no PATH, caso esteja e não esteja gerando a imagem, reinicie o PC
+
+>>>>>>> dcfd98cfcd30bb6d951e0070d4b2d7949e34b7a5
 from lark import Lark
 from IPython.display import Image
 from lark import Tree, Token
@@ -52,7 +67,10 @@ def ASTToImg(node):
   dg = graphviz.Source(dSrc)
   return Image(dg.render('a', format='png', cleanup=True))
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dcfd98cfcd30bb6d951e0070d4b2d7949e34b7a5
 #Gramática
 G_Calc = """
 ?start: sum
@@ -74,20 +92,36 @@ G_Calc = """
      | NAME             -> var
      | "(" sum ")"
 
+<<<<<<< HEAD
 # %import common.CNAME -> NAME
 # %import common.NUMBER
 # %import common.WS_INLINE
 # %ignore WS_INLINE
+=======
+%import common.CNAME -> NAME
+%import common.NUMBER
+%import common.WS_INLINE
+%ignore WS_INLINE
+>>>>>>> dcfd98cfcd30bb6d951e0070d4b2d7949e34b7a5
 """
 parser = Lark(G_Calc)
 
 
+<<<<<<< HEAD
 
 text = '2+1/3^2'
+=======
+text = '2-1/3^2'
+>>>>>>> dcfd98cfcd30bb6d951e0070d4b2d7949e34b7a5
 print("Implementação realizada por:\nAdriel Ravi\nCaio Eduardo\nPedro Henrique\n")
 AST = parser.parse(text)
 print(AST)
 print()
 print(AST.pretty())
+<<<<<<< HEAD
 ASTToImg(AST)
 
+=======
+print()
+ASTToImg(AST)
+>>>>>>> dcfd98cfcd30bb6d951e0070d4b2d7949e34b7a5
